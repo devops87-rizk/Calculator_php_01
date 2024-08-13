@@ -20,12 +20,32 @@
     </form>
 
     <?php
+
         if(isset($_POST['eksekusi'])) {
             $number1 = $_POST['number1'];
             $number2 = $_POST['number2'];
             $operator = $_POST['operator'];
+            $hasil = 0;
+
+            // Penjumlahan
+            if ($operator == "+") {
+                $hasil = $number1 + $number2;
+            }
+            // Pengurangan
+            elseif ($operator == "-") {
+                $hasil = $number1 - $number2;
+            }
+            // Perkalian
+            elseif ($operator == "x") {
+                $hasil = $number1 * $number2;
+            }
+            // Pembagian
+            elseif ($operator == "/") {
+                $hasil = $number1 / $number2;
+            }
             echo "<br>";
-            echo "$number1 $operator $number2";
+            echo "$number1 $operator $number2 <br>";
+            echo "= $hasil";
         }
          
 
